@@ -1,0 +1,458 @@
+/* Global Styles */
+:root {
+    --primary-color: #0a192f;
+    --secondary-color: #112240;
+    --accent-color: #64ffda;
+    --text-color: #ccd6f6;
+    --text-secondary: #8892b0;
+    --success-color: #64ffda;
+    --error-color: #ff6b6b;
+    --card-bg: rgba(17, 34, 64, 0.7);
+    --header-bg: rgba(10, 25, 47, 0.95);
+    --overlay-bg: rgba(10, 25, 47, 0.98);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Container Styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Personalization Section */
+.personalization-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.personalization-content {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.1);
+}
+
+.input-group {
+    margin-top: 20px;
+}
+
+#userName {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--accent-color);
+    background: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.save-button {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.save-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: var(--header-bg);
+    color: var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--accent-color);
+}
+
+.greeting-section {
+    margin-bottom: 15px;
+}
+
+#greeting {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: var(--accent-color);
+}
+
+.user-greeting {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.prayer-streak {
+    font-size: 1rem;
+    color: var(--accent-color);
+    margin-top: 5px;
+}
+
+.arabic-title {
+    font-family: 'Amiri', serif;
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+
+/* Prayer Card Styles */
+.prayer-container {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.prayer-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    gap: 15px;
+}
+
+.prayer-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.1);
+}
+
+.prayer-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.prayer-info h2 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.arabic {
+    font-family: 'Amiri', serif;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.hadith {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    font-style: italic;
+    margin-top: 5px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Checkbox Styles */
+.checkbox-container {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: var(--primary-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: var(--secondary-color);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--accent-color);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--primary-color);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Controls Styles */
+.controls {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.reset-button, .edit-button {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+.reset-button:hover, .edit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+}
+
+/* Celebration Animation Styles */
+.celebration-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-bg);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.celebration-content {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    animation: scaleIn 0.5s ease;
+    position: relative;
+    border: 1px solid var(--accent-color);
+    max-width: 90%;
+    width: 400px;
+}
+
+.close-celebration {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-celebration:hover {
+    color: var(--accent-color);
+}
+
+.celebration-content h2 {
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.streak-info {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+/* Animations */
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    header {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    #greeting {
+        font-size: 1.5rem;
+    }
+
+    .arabic-title {
+        font-size: 1.5rem;
+    }
+
+    .prayer-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .prayer-card {
+        padding: 15px;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .prayer-info {
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+
+    .prayer-info h2 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    .arabic {
+        font-size: 1rem;
+    }
+
+    .hadith {
+        font-size: 0.8rem;
+        line-height: 1.3;
+        margin-top: 3px;
+    }
+
+    .checkbox-container {
+        padding-left: 30px;
+        flex-shrink: 0;
+    }
+
+    .checkmark {
+        height: 22px;
+        width: 22px;
+    }
+
+    .controls {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .reset-button, .edit-button {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .celebration-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .celebration-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 360px) {
+    .container {
+        padding: 5px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    #greeting {
+        font-size: 1.3rem;
+    }
+
+    .arabic-title {
+        font-size: 1.3rem;
+    }
+
+    .prayer-card {
+        padding: 12px;
+    }
+
+    .prayer-info h2 {
+        font-size: 1.1rem;
+    }
+
+    .arabic {
+        font-size: 0.9rem;
+    }
+
+    .hadith {
+        font-size: 0.75rem;
+        line-height: 1.2;
+    }
+
+    .checkbox-container {
+        padding-left: 25px;
+    }
+
+    .checkmark {
+        height: 20px;
+        width: 20px;
+    }
+} 

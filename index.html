@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Prayer Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for Arabic text -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Personalization Section -->
+        <div id="personalization" class="personalization-section">
+            <div class="personalization-content">
+                <h2>Welcome to Prayer Tracker</h2>
+                <div class="input-group">
+                    <input type="text" id="userName" placeholder="Enter your name" maxlength="20">
+                    <button id="saveName" class="save-button">Save</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content (initially hidden) -->
+        <div id="mainContent" class="main-content" style="display: none;">
+            <header>
+                <div class="greeting-section">
+                    <h1 id="greeting">Welcome</h1>
+                    <p id="userGreeting" class="user-greeting"></p>
+                    <p id="prayerStreak" class="prayer-streak"></p>
+                </div>
+                <p class="arabic-title">متابعة الصلوات</p>
+            </header>
+
+            <div class="prayer-container">
+                <!-- Fajr Prayer -->
+                <div class="prayer-card" id="fajr">
+                    <div class="prayer-info">
+                        <h2>Fajr <span class="arabic">الفجر</span></h2>
+                        <p class="hadith">"Whoever prays Fajr in congregation, then sits remembering Allah until the sun rises, then prays two rak'ahs, will have a reward like that of Hajj and Umrah."</p>
+                    </div>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="fajr-check">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+
+                <!-- Dhuhr Prayer -->
+                <div class="prayer-card" id="dhuhr">
+                    <div class="prayer-info">
+                        <h2>Dhuhr <span class="arabic">الظهر</span></h2>
+                        <p class="hadith">"The time for Dhuhr prayer begins when the sun has passed its zenith and a man's shadow is equal in length to his height, until the time for Asr prayer comes."</p>
+                    </div>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="dhuhr-check">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+
+                <!-- Asr Prayer -->
+                <div class="prayer-card" id="asr">
+                    <div class="prayer-info">
+                        <h2>Asr <span class="arabic">العصر</span></h2>
+                        <p class="hadith">"Whoever misses the Asr prayer, it is as if he has lost his family and property."</p>
+                    </div>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="asr-check">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+
+                <!-- Maghrib Prayer -->
+                <div class="prayer-card" id="maghrib">
+                    <div class="prayer-info">
+                        <h2>Maghrib <span class="arabic">المغرب</span></h2>
+                        <p class="hadith">"The time for Maghrib prayer is when the sun has set and the twilight has not disappeared."</p>
+                    </div>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="maghrib-check">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+
+                <!-- Isha Prayer -->
+                <div class="prayer-card" id="isha">
+                    <div class="prayer-info">
+                        <h2>Isha <span class="arabic">العشاء</span></h2>
+                        <p class="hadith">"If it were not to be a hardship on my Ummah, I would have ordered them to delay the Isha prayer until the first third of the night."</p>
+                    </div>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="isha-check">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="reset-btn" class="reset-button">Reset for New Day</button>
+                <button id="editName" class="edit-button">Edit Name</button>
+            </div>
+        </div>
+
+        <!-- Celebration Animation Container -->
+        <div id="celebration" class="celebration-container">
+            <div class="celebration-content">
+                <button class="close-celebration">&times;</button>
+                <h2>Masha'Allah!</h2>
+                <p class="arabic">ما شاء الله</p>
+                <p id="celebrationMessage">You've completed all your prayers!</p>
+                <div class="streak-info">
+                    <p id="streakMessage"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
